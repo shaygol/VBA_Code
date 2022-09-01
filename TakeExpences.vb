@@ -1,4 +1,4 @@
-Sub TakeExpences2()
+Sub TakeExpences()
 '    ActiveSheet.Range("Temp_Exsp[#All]").RemoveDuplicates Columns:=1, Header:= _
 '        xlYes
     
