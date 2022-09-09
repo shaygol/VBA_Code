@@ -1,4 +1,5 @@
-for i = 1 to 10
+Sub CopytToolsTo2022()
+    for i = 1 to 10
 	Sub CopytToolsTo2022()
 		Sheets("Tools").Select
 		Range("K2").Select
@@ -9,5 +10,6 @@ for i = 1 to 10
 			Range("J3").Select
 			Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
 				:=False, Transpose:=False
-    End If
-Next i
+		End If
+	Next i
+End Sub
