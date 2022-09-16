@@ -1,17 +1,16 @@
-'TODO: Record new macro'
-
 Sub CopytToolsTo2022()
-    for i = 1 to 10
-	Sub CopytToolsTo2022()
-		Sheets("Tools").Select
-		Range("K2").Select
-		If Selection <> 0 Then
-			Application.CutCopyMode = False
-			Selection.Copy
-			Sheets("2022").Select
-			Range("J3").Select
-			Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
-				:=False, Transpose:=False
-		End If
-	Next i
+    i = 0
+    For Each cell In Worksheets("Tools").Range("sum[ñëåí]")
+        If cell <> 0 Then
+            Application.CutCopyMode = False
+            cell.Copy
+            Sheets("2022").Select
+            Range("J3").Offset(i).Select
+            If (Selection.MergeCells = False) Then
+                Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+                    :=False, Transpose:=False
+            End If
+        End If
+    i = i + 1
+    Next cell
 End Sub
